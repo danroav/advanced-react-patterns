@@ -13,7 +13,12 @@ import * as React from 'react'
 // differently in codesandbox and locally :shrug:
 const noop = () => {}
 
-class Switch extends React.Component {
+// this is only a class component so we can do some implementation-detail
+// tests to make sure you're doing things as instructed :)
+class Switch extends React.Component<
+  {on: boolean; 'aria-label': string} & JSX.IntrinsicElements['input'],
+  {}
+> {
   render() {
     const {
       on,
